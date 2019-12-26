@@ -23,3 +23,50 @@ Things you may want to cover:
 
 * ...
 
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|mail|string|null: false, unique: true|
+
+### Association
+- has_many :messages
+- has_many :lesson_users
+- has_many :lessons, through: lesson_users
+
+
+
+## lessonsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+
+### Association
+- has_many :messages
+- has_many :lesson_users
+- has_many :users, through: lesson_users
+
+
+
+## lesson_useraテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|lesson_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :lesson
+
+
+
+## messages
+|Column|Type|Options|
+|------|----|-------|
+|content|string|----|
+|user_id|integer|null: false, foreign_key: true|
+|lesson_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :lesson
