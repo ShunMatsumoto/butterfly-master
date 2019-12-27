@@ -22,7 +22,7 @@
       .header__box__user__box
 
         .header__box__user__box__name
-          松本
+          = current_user.name
 
         .header__box__user__box__icons
           
@@ -30,7 +30,7 @@
             = link_to "#" do
               <i class="fas fa-user-cog"></i>
           .header__box__user__box__icons__cog-icon
-            = link_to "#" do
+            = link_to edit_user_path(current_user) do
               <i class="fas fa-cog"></i>
 
   .header__menu-bar
