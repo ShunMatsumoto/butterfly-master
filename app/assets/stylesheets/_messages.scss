@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.header {
+  background-color: gray;
+  height: 140px;
+  width: 100vw;
+  padding-top: 6px;
+
+  &__box {
+    background-color: khaki;
+    height: 80px;
+    width: calc(100% - 10px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__main-title {
+      background-color: skyblue;
+      height: 70px;
+      width: calc(100% - 160px);
+      display: flex;
+      justify-content: center;
+      font-style: italic;
+      text-shadow: 3px 2px 1px #ffffff, 1px 1px 1px #ffffff;
+
+      &__title1 {
+        height: 70px;
+        font-size: 20px;
+        padding-top: 5px;
+        font-weight: bold;
+        font-style: italic;
+        
+
+        &__title1-1 {
+
+        }
+
+        &__title1-2 {
+
+        }
+      }
+
+      &__title2 {
+        height: 70px;
+        color: white;
+        text-shadow:-3px -3px 1px rgb(168, 187, 63), 3px 8px 3px rgb(15, 15, 13);
+        font-weight: 600;
+        font-size: 70px;
+        line-height: 70px;
+        padding: 0 30px;
+      }
+
+      &__title3 {
+        height: 70px;
+        font-size: 20px;
+        padding-top: 5px;
+        font-weight: bold;
+
+        &__title3-1 {
+
+        }
+
+        &__title3-2 {
+
+        }
+      }
+    }
+
+    &__user {
+      background-color: skyblue;
+      height: 70px;
+      width: 150px;
+      padding-top: 20px;
+
+      &__box {
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &__name {
+          font-size: 17px;
+          font-weight: bold;
+          line-height: 17px;
+        }
+
+        &__icons {;
+          height: 20px;
+          width: 50px;
+          line-height: 20px;
+          display: flex;
+          justify-content: space-around;
+
+          &__fas-icon {
+            
+          }
+
+          &__cog-icon {
+
+          }
+        }
+      }
+    }
+  }
+
+  &__menu-bar {
+    background-color: gold;
+    height: 47px;
+    width: calc(100% - 10px);
+    margin: 0 auto;
+    display: flex;
+    padding-top: 3px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    text-shadow:-3px -3px 1px rgb(168, 187, 63), 3px 3px 5px rgb(15, 15, 13);
+    
+    &__content {
+      background-color: rgb(0, 204, 255);
+      border: solid 1px black;
+      height: 45px;
+      width: 16.6666667%;
+      padding-top: 10px;
+
+    }
+  }
+}
+
+
+.main {
+  background-color: gray;
+  height: calc(100vh - 140px);
+  width: 100vw;
+
+  &__box {
+    background-color: darkgray;
+    height: calc(100% - 100px);
+    width: calc(100vw - 10px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__youtube {
+      background-color: whitesmoke;
+      border: solid 1px black;
+      height: calc(100% - 20px);
+      width: 66%;
+      padding-top: 5px;
+      display: flex;
+    flex-direction: column;
+
+      &__lesson-title {
+        background-color: white;
+        border: solid 1px black;
+        font-size: 20px;
+        line-height: 36px;
+        text-align: center;
+        width: 50%;
+        height: 7%;
+        margin: 0 auto;
+      }
+
+      &__youtube-position {
+        background-color: white;
+        height: 75%;
+        width: 70%;
+        margin: 10px auto;
+      }
+    }
+
+    &__chat {
+      background-color: whitesmoke;
+      border: solid 1px black;
+      height: calc(100% - 20px);
+      width: 33%;
+      padding: 25px;
+
+      &__name {
+        font-size: 15px;
+        font-weight: bolder;
+        display: flex;
+
+        &__time {
+          font-size: 10px;
+          font-weight: lighter;
+          margin-left: 5px;
+        }
+      }
+
+      &__text {
+        font-size: 13px;
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  &__footer {
+    background-color: skyblue;
+    height: 95px;
+    width: calc(100% - 10px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__message-form {
+      height: 60%;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+
+      &__text {
+        background-color: white;
+        border: solid 1px black;
+        font-size: 17px;
+        font-weight: lighter;
+        padding: 15px 0 0 10px;
+        height: 100%;
+        width: 88%;
+      }
+
+      &__send-btn {
+        background-color: white;
+        border: solid 1px black;
+        font-size: 20px;
+        font-weight: bold;
+        height: 100%;
+        width: 10%;
+        padding: 13px 0 0 35px;
+      }
+    }
+  }
+}
