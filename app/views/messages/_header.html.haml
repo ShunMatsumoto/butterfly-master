@@ -5,6 +5,7 @@
     .header__box__main-title
     
       .header__box__main-title__title1
+
         .header__box__main-title__title1__title1-1
           デジモン
         .header__box__main-title__title1__title1-2
@@ -27,22 +28,15 @@
         .header__box__user__box__icons
           
           .header__box__user__box__icons__fas-icon
-            = link_to "#" do
+            = link_to new_lesson_path do
               <i class="fas fa-user-cog"></i>
+
           .header__box__user__box__icons__cog-icon
             = link_to edit_user_path(current_user) do
               <i class="fas fa-cog"></i>
 
   .header__menu-bar
-    .header__menu-bar__content
-      デモ演奏
-    .header__menu-bar__content
-      Lesson1
-    .header__menu-bar__content
-      Lesson2
-    .header__menu-bar__content
-      Lesson3
-    .header__menu-bar__content
-      slow-solo
-    .header__menu-bar__content
-      Download
+    - current_user.lessons.each do |lesson|
+      .header__menu-bar__content
+        = link_to "#" do
+          = lesson.name
