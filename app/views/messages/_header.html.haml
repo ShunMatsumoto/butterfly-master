@@ -38,5 +38,5 @@
   .header__menu-bar
     - current_user.lessons.each do |lesson|
       .header__menu-bar__content
-        = link_to "#" do
+        = link_to lesson_messages_path(lesson) do
           = lesson.name

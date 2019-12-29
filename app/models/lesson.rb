@@ -1,4 +1,5 @@
 class Lesson < ApplicationRecord
+  has_many :messages
   has_many :lesson_users
   has_many :users, through: :lesson_users
 

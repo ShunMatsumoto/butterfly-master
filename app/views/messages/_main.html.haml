@@ -4,32 +4,29 @@
     .main__box__youtube
 
       .main__box__youtube__lesson-title
-        Lesson1「イントロ編」
+        = @lesson.name
 
       .main__box__youtube__youtube-position
 
     .main__box__chat
+      .messages
+        = render @messages
 
-      .main__box__chat__name
-        松本
-        .main__box__chat__name__time
-          2019/12/26/Fri
-      .main__box__chat__text
-        テスト
-
-      .main__box__chat__name
-        松本
-        .main__box__chat__name__time
-          2019/12/26/Fri
-      .main__box__chat__text
-        テスト
+      -# .main__box__chat__name
+      -#   = lesson.user.name
+      -#   .main__box__chat__name__time
+      -#     = lesson.current_at.strftime("%Y年%m月%d日 %H時%M分")
+      -# .main__box__chat__text
+      -#   - if message.content.present?
+      -#     %p.lower-message__content
+      -#       = message.content
+      -#   = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
   .main__footer
     
     .main__footer__message-form
-
-      .main__footer__message-form__text
-        message
-
-      .main__footer__message-form__send-btn
-        Send
+      = form_for [@lesson, @message] do |f|
+        .main__footer__message-form__text
+          = f.text_field :content, class: "form__message", placeholder: "type a message"
+        .main__footer__message-form__send-btn
+          = f.submit "Send", class: "form__submit"
