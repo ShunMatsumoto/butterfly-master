@@ -27,7 +27,7 @@ class LessonsController < ApplicationController
 
   def update
       if @lesson.update(lesson_params)
-        redirect_to root_path, "レッスンを更新しました"
+        redirect_to lesson_messages_path(@lesson), notice: "レッスンを更新しました"
       else
         render :edit
       end
