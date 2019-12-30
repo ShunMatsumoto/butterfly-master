@@ -25,6 +25,7 @@ a {
 
     &__main-title {
       background-color: skyblue;
+      border: solid 1px black;
       height: 70px;
       width: calc(100% - 160px);
       display: flex;
@@ -77,6 +78,7 @@ a {
 
     &__user {
       background-color: skyblue;
+      border: solid 1px black;
       height: 70px;
       width: 150px;
       padding-top: 20px;
@@ -181,10 +183,14 @@ a {
       }
 
       &__youtube-position {
-        background-color: white;
         height: 75%;
         width: 70%;
         margin: 10px auto;
+
+        &__name {
+          font-weight: bolder;
+          padding: 10px;
+        }
       }
     }
 
@@ -238,6 +244,7 @@ a {
 
   &__footer {
     background-color: skyblue;
+    border: solid 1px black;
     height: 95px;
     width: calc(100% - 10px);
     margin: 0 auto;
