@@ -157,7 +157,17 @@ a {
       width: 66%;
       padding-top: 5px;
       display: flex;
-    flex-direction: column;
+      flex-direction: column;
+      overflow: scroll;
+
+      &__edit {
+        background-color: khaki;
+        border: solid 1px black;
+        height: 5%;
+        width: 5%;
+        margin-left: 4px;
+        padding-left: 6px;
+      }
 
       &__lesson-title {
         background-color: white;
@@ -184,6 +194,7 @@ a {
       height: calc(100% - 20px);
       width: 33%;
       padding: 25px;
+      overflow: scroll;
 
       .upper-message {
         display: flex;
