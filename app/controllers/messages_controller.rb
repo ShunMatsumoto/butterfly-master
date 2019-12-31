@@ -10,7 +10,10 @@ class MessagesController < ApplicationController
   def create
     @message = @lesson.messages.new(message_params)
     if @message.save
-      redirect_to lesson_messages_path(@lesson), notice: "メッセージが送信されました"
+      respond_to do |format|
+        format.html { redirect_to lesson_messages_path(@lesson), notice: "メッセージが送信されました" }
+        format.json
+      end
     else
       @messages = @lesson.message.includes(:user)
       flash.now[:alert] = "メッセージを入力してください"
