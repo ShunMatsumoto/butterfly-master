@@ -5,20 +5,36 @@
       %ul
         - lesson.errors.full_messages.each do |message|
           %li= message
+  
+  
   .chat-group-form__field
     .chat-group-form__field--left
-      = f.label :name, class: 'chat-group-form__label'
+      %label.chat-group-form__label{for: "chat_group_レッスンメンバーを追加"} レッスンメンバーを追加
     .chat-group-form__field--right
-      = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'レッスン名を入力してください'
-  .chat-group-form__field.clearfix
-    / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+      .chat-group-form__search.clearfix
+        %input#user-search-field.chat-group-form__input{placeholder: "追加したいユーザー名を入力してください", type: "text"}/
+      #user-search-result
+
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "chat_group_レッスンメンバー"} レッスンメンバー
+      %label.chat-group-form__label{for: "chat_group_レッスンメンバー"} レッスンメンバー
+
     .chat-group-form__field--right
-      / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-      = f.collection_check_boxes :user_ids, User.all, :id, :name
-      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+      #chat-group-users.js-add-user
+        .chat-group-user.clearfix.js-chat-member#chat-group-user-8
+          %input{name: "lesson[user_ids][]", type: "hidden", value: current_user.id}
+          %p.chat-group-user__name= current_user.name
+
+        - lesson.users.each do |user|
+          - if current_user.name != user.name
+            .chat-group-user.clearfix.js-chat-member
+              -# idsはテーブルの主キーを使用するリレーションのIDをすべて取り出すのに使用できます
+              %input{name: "lesson[user_ids][]", type: "hidden", value: user.id}    
+              %p.chat-group-user__name
+                = user.name 
+              %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+                削除
+
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
