@@ -8,6 +8,9 @@ $(function(){
                     </div>
                     <div class="upper-message__date">
                     ${message.created_at}
+                      <div class="upper-message__date__delete">
+                        <a class="message-delete" rel="nofollow" data-method="delete" href=${message.id}>削除</a>
+                      </div>
                     </div>
                   </div>
                   <div class="lower-message">
@@ -67,6 +70,25 @@ $(function(){
         console.log('error');
       })
     }
+
+    //メッセージ削除機能
+    // $(".message-delete").on("click", function(e) {
+    //   e.preventDefault();
+    //   // e.stopPropagation();
+    //   var url = $(this).attr("html");
+    //   var delete_message_id = $(this)[0].dataset["deleteMessageId"];
+    //   $.ajax ({
+    //     url: url,
+    //     type: "DELETE",
+    //     dataType: "json",
+    //     data: {delete_message_id: delete_message_id},
+    //   })
+    //   .done(function(message){
+    //     ("message.id").remove();
+    //   })
+    // })
+
+
     if (document.location.href.match(/\/lessons\/\d+\/messages/)) {
       setInterval(reloadMessages, 7000);                              //setInterval(定期的動かしたい関数, ミリ秒単位で動かす感覚);
     }

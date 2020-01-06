@@ -21,6 +21,13 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy
+    message = @lesson.messages.find(params[:id])
+    if message.user_id == current_user.id && message.destroy
+      redirect_to lesson_messages_path(@lesson), notice: 'メッセージが削除されました'
+    end
+  end
+
   private
 
   def message_params
