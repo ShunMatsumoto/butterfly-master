@@ -9,6 +9,9 @@ Sass 3.7.4/
 jQuery 3.4.1/
 Github
 
+## リンク
+https://butterfly-master.herokuapp.com/
+
 ## ログイン方法
 ・mail_address : ss@ss
 ・password : ssssssss
