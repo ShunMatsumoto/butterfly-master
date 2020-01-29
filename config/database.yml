@@ -49,9 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: butterfly-master_production
-  username: butterfly-master
-  password: <%= ENV['BUTTERFLY-MASTER_DATABASE_PASSWORD'] %>
+  # database: butterfly-master_production
+  # username: butterfly-master
+  # password: <%= ENV['BUTTERFLY-MASTER_DATABASE_PASSWORD'] %>
   adapter: postgresql
   encoding: unicode
   pool: 5
