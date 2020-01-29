@@ -2,6 +2,6 @@ FactoryBot.define do
   factory :message do
     content {Faker::Lorem.sentence}
     user
-    group
+    lesson
   end
 end
