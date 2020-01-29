@@ -23,6 +23,10 @@ Things you may want to cover:
 
 * ...
 
+【ログイン】
+mail_address : ss@ss
+password : ssssssss
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
